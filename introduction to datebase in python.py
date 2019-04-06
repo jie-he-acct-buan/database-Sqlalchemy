@@ -1,10 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Sun Feb 10 10:09:03 2019
-
-@author: Jie
-"""
-
 import numpy as np
 import pandas as pd
 from sqlalchemy import create_engine, MetaData, Table, select, and_, or_, desc, func, case, cast, Float
@@ -19,7 +12,7 @@ pd.set_option('display.width', None)
 
 # Import create_engine
 # Create an engine that connects to the census.sqlite file: engine
-engine = create_engine('sqlite:///F:/0 - PhD at UTD/2019 Spring/DataCamp/Introduction to Databases in Python/census.sqlite')
+engine = create_engine('sqlite:///census.sqlite')
 
 # Print table names
 print(engine.table_names())
@@ -331,7 +324,7 @@ for record in results:
     print(record)
 
 ##############################################################################
-engine2 = create_engine('sqlite:///F:/0 - PhD at UTD/2019 Spring/DataCamp/Introduction to Databases in Python/employees.sqlite')
+engine2 = create_engine('sqlite:///employees.sqlite')
 print(engine2.table_names())
 
 metadata2=MetaData(engine2)
@@ -613,7 +606,7 @@ print(census.exists(engine))
 from sqlalchemy import create_engine, MetaData
 
 # Define an engine to connect to chapter5.sqlite: engine
-engine = create_engine('sqlite:///F:/0 - PhD at UTD/2019 Spring/DataCamp/Introduction to Databases in Python/chapter5.sqlite')
+engine = create_engine('sqlite:///chapter5.sqlite')
 
 # Initialize MetaData: metadata
 metadata = MetaData()
@@ -641,7 +634,7 @@ metadata.create_all(engine)
 values_list = []
 
 import csv
-csv_reader = csv.reader(open('F:/0 - PhD at UTD/2019 Spring/DataCamp/Introduction to Databases in Python/census.csv','r'))
+csv_reader = csv.reader(open('census.csv','r'))
     # Iterate over the rows
 for row in csv_reader:
     # Create a dictionary with the values
@@ -722,54 +715,3 @@ results = connection.execute(stmt).fetchall()
 for result in results:
     print('{}:{}'.format(result.state, result.pop_change))
 ##############################################################################
-
-##############################################################################
-
-##############################################################################
-
-##############################################################################
-
-##############################################################################
-
-##############################################################################
-
-##############################################################################
-
-##############################################################################
-
-##############################################################################
-
-##############################################################################
-
-##############################################################################
-
-##############################################################################
-
-##############################################################################
-
-##############################################################################
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
